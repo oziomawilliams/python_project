@@ -1,0 +1,21 @@
+first_num = float(input("Enter a number: "))
+second_num = float(input("Enter second number: "))
+operator = input("Enter an operator (+, -, *, /): ")
+
+if operator == '+':
+    result = first_num + second_num
+    print(result)
+elif operator == '-':
+    result = first_num - second_num
+    print(result)
+elif operator == '*':
+    result = first_num * second_num
+    print(result)
+elif operator == '/':
+    if second_num != 0:
+        result = first_num / second_num
+        print(result)
+    else:
+        print("Error: Division by zero is not allowed.")
+else:
+    print("Invalid operator. Please use +, -, *, or /.")
