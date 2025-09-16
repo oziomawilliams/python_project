@@ -1,0 +1,18 @@
+file = open("new_file.txt", "w")
+file.write("My week 4 assignment. " \
+"\nA program that reads a txt file and writes to another txt file." \
+"\nIt also converts it to uppercase.")
+try:
+    file_name = input("Enter the file name to read from (with .txt extension): ")
+    new_data = input("Enter the text to append to the file: ")
+    with open(file_name, "r") as file: data = file.read()
+    data += f"\n{new_data}"
+    data = data.title()
+    file = open("modified_file.txt", "a")
+    file.write(data)
+    print("Data appended successfully.")
+    with open("modified_file.txt", "r") as modified_file: modified_file = modified_file.read()
+    print(modified_file)
+except FileNotFoundError:  
+    print("File not found. Plese enter a valid file name or check the file extension.")
+file.close()

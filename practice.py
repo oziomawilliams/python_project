@@ -1,8 +1,16 @@
-def divisible_by_10 (num):
-    if num % 10 == 0:
-        return True
-    else:
-        return False
-    
-print(divisible_by_10(20))  # True
-print(divisible_by_10(25))  # False
+file = open("input.txt", "w")
+file.write("My weekly assignment. " \
+"\nA program that reads a txt file and writes to another txt file." \
+"\nIt also converts it to uppercase.")
+with open("input.txt", "r") as file: data = file.read()
+num = len(data.split())
+data = data.upper()
+print(data)
+print(num)
+file = open("output.txt", "w")
+file.write(data)
+file = open("output.txt", "a")
+file.write(f"\nThe number of words in the input file is: {num}")
+print(f"Successfully appended to: 'output.txt'")
+with open("output.txt", "r") as file: print(file.read())
+file.close()
